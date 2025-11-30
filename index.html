@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDEALMETER - Suv Hisoblagichlari</title>
+    <!-- Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        /* Oldingi CSS kodlari... */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Oldingi HTML tarkibi... -->
+    </div>
+
+    <script>
+        // Telegram Web App initialization
+        const tg = window.Telegram.WebApp;
+        
+        // Botni ishga tushirish
+        tg.expand();
+        tg.enableClosingConfirmation();
+        
+        // Foydalanuvchi ma'lumotlarini olish
+        const user = tg.initDataUnsafe.user;
+        if (user) {
+            console.log("Foydalanuvchi:", user);
+        }
+
+        // Sahifalar o'rtasida navigatsiya
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.nav-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                const pageId = this.getAttribute('data-page');
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                document.getElementById(pageId).classList.add('active');
+            });
+        });
+        
+        // Mahsulotni buyurtma qilish
+        document.querySelectorAll('.buy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-product');
+                document.getElementById('product-name').value = productName;
+                document.getElementById('order-form').style.display = 'block';
+                document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Buyurtma formasi
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const productName = document.getElementById('product-name').value;
+            const customerName = document.getElementById('customer-name').value;
+            const customerPhone = document.getElementById('customer-phone').value;
+            const customerAddress = document.getElementById('customer-address').value;
+            const quantity = document.getElementById('order-quantity').value;
+            
+            // Telegram botga xabar yuborish
+            const orderData = {
+                product: productName,
+                name: customerName,
+                phone: customerPhone,
+                address: customerAddress,
+                quantity: quantity,
+                user_id: user ? user.id : 'Noma\'lum'
+            };
+            
+            // Botga xabar yuborish
+            sendToTelegram(orderData);
+            
+            alert(`Buyurtmangiz qabul qilindi!\n\nMahsulot: ${productName}\nIsm: ${customerName}\nTelefon: ${customerPhone}\nMiqdor: ${quantity}\n\nTez orada siz bilan bog'lanamiz.`);
+            
+            this.reset();
+            document.getElementById('order-form').style.display = 'none';
+        });
+        
+        // Hisoblagichni tekshirish
+        document.getElementById('checkForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const serialNumber = document.getElementById('serial-number').value;
+            const resultDiv = document.getElementById('check-result');
+            
+            // Tasodifiy natija (keyin server bilan almashtirishingiz mumkin)
+            const isOriginal = Math.random() > 0.3;
+            
+            if (isOriginal) {
+                resultDiv.className = 'result success';
+                resultDiv.innerHTML = `
+                    <h3>✅ Hisoblagich asl!</h3>
+                    <p>Seriya raqami: <strong>${serialNumber}</strong></p>
+                    <p>Bu hisoblagich IDEALMETER kompaniyasi tomonidan ishlab chiqarilgan asl mahsulotdir.</p>
+                `;
+            } else {
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = `
+                    <h3>❌ Hisoblagich soxta!</h3>
+                    <p>Seriya raqami: <strong>${serialNumber}</strong></p>
+                    <p>Bu hisoblagich IDEALMETER kompaniyasi tomonidan ishlab chiqarilmagan.</p>
+                `;
+            }
+            
+            resultDiv.style.display = 'block';
+        });
+        
+        // Telegram botga ma'lumot yuborish funksiyasi
+        function sendToTelegram(data) {
+            // Bu yerda siz o'zingizning serveringizga so'rov yuborishingiz kerak
+            // Misol uchun:
+            /*
+            fetch('https://your-server.com/api/order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Success:', result);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+            */
+            
+            console.log("Buyurtma ma'lumotlari:", data);
+            
+            // Agar sizda server bo'lmasa, shunchaki Telegram botga xabar yuborishingiz mumkin
+            // Buning uchun Telegram Bot API dan foydalanishingiz kerak
+        }
+        
+        // Botni yashil rangga o'zgartirish
+        tg.setHeaderColor('#1e88e5');
+        tg.setBackgroundColor('#f5f5f5');
+    </script>
+</body>
+</html>
