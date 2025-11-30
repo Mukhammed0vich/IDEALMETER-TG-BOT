@@ -13,9 +13,10 @@
         }
         
         body {
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #FFFFFF;
+            color: #000000;
             line-height: 1.6;
+            padding-bottom: 80px; /* Pastki navigatsiya uchun joy */
         }
         
         .container {
@@ -25,63 +26,74 @@
         }
         
         header {
-            background: linear-gradient(135deg, #1e88e5, #0d47a1);
-            color: white;
+            background-color: #FFFFFF;
             padding: 20px 0;
             text-align: center;
-            border-radius: 0 0 15px 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #f0f0f0;
         }
         
         .logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
             margin-bottom: 10px;
+            color: #000000;
         }
         
         .logo span {
-            color: #ffeb3b;
+            color: #1e88e5;
         }
         
-        nav {
+        .company-info {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        /* Pastki navigatsiya */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #FFFFFF;
             display: flex;
-            justify-content: center;
-            background-color: white;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
+            justify-content: space-around;
+            padding: 15px 0;
+            border-top: 2px solid #f0f0f0;
+            z-index: 1000;
         }
         
         .nav-btn {
             flex: 1;
-            padding: 15px;
+            padding: 12px;
             text-align: center;
             background: none;
             border: none;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             color: #555;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
         }
         
         .nav-btn.active {
-            background-color: #1e88e5;
-            color: white;
+            color: #1e88e5;
         }
         
-        .nav-btn:hover:not(.active) {
-            background-color: #e3f2fd;
+        .nav-btn:hover {
             color: #1e88e5;
+        }
+        
+        .nav-icon {
+            font-size: 20px;
         }
         
         .page {
             display: none;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             margin-bottom: 20px;
         }
         
@@ -96,34 +108,48 @@
         }
         
         h2 {
-            color: #1e88e5;
-            margin-bottom: 15px;
+            color: #000000;
+            margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #e3f2fd;
+            border-bottom: 2px solid #f0f0f0;
+            font-size: 22px;
+        }
+        
+        .brand-section {
+            margin-bottom: 30px;
+        }
+        
+        .brand-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1e88e5;
+            padding-left: 10px;
+            border-left: 4px solid #1e88e5;
         }
         
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
         }
         
         .product-card {
-            background-color: #f9f9f9;
+            background-color: #f8f9fa;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
+            border: 1px solid #e9ecef;
         }
         
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
         
         .product-img {
-            height: 180px;
-            background-color: #e3f2fd;
+            height: 160px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -137,14 +163,15 @@
         
         .product-title {
             font-weight: 600;
-            margin-bottom: 10px;
-            color: #333;
+            margin-bottom: 8px;
+            color: #000000;
+            font-size: 16px;
         }
         
         .product-desc {
             font-size: 14px;
             color: #666;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .product-price {
@@ -167,6 +194,7 @@
             transition: background-color 0.3s ease;
             width: 100%;
             text-align: center;
+            font-size: 14px;
         }
         
         .btn:hover {
@@ -174,10 +202,11 @@
         }
         
         .check-form {
-            background-color: #f9f9f9;
+            background-color: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
+            border: 1px solid #e9ecef;
         }
         
         .form-group {
@@ -188,7 +217,7 @@
             display: block;
             margin-bottom: 5px;
             font-weight: 600;
-            color: #555;
+            color: #000000;
         }
         
         input, select, textarea {
@@ -197,6 +226,8 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
+            background-color: #FFFFFF;
+            color: #000000;
         }
         
         .result {
@@ -222,16 +253,17 @@
         
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 15px;
             margin-top: 20px;
         }
         
         .contact-card {
-            background-color: #f9f9f9;
+            background-color: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            border: 1px solid #e9ecef;
         }
         
         .contact-icon {
@@ -240,21 +272,36 @@
             margin-bottom: 10px;
         }
         
-        footer {
-            text-align: center;
+        .contact-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+        
+        .about-content {
+            background-color: #f8f9fa;
             padding: 20px;
-            margin-top: 30px;
-            color: #666;
-            font-size: 14px;
-            border-top: 1px solid #eee;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .about-content h3 {
+            color: #1e88e5;
+            margin: 15px 0 10px 0;
+        }
+        
+        .about-content ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .about-content li {
+            margin-bottom: 8px;
         }
         
         @media (max-width: 768px) {
             .product-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info {
                 grid-template-columns: 1fr;
             }
         }
@@ -265,47 +312,44 @@
         <header>
             <div class="logo">IDEAL<span>METER</span></div>
             <p>Suv hisoblagichlari ishlab chiqaruvchi</p>
+            <div class="company-info">
+                <p>📞 +998 77 282 00 01 | 📍 Toshkent sh, Uchtepa t, O'rikzor savdo kompleksi</p>
+            </div>
         </header>
-        
-        <nav>
-            <button class="nav-btn active" data-page="about">Kompaniya haqida</button>
-            <button class="nav-btn" data-page="products">Buyurtma berish</button>
-            <button class="nav-btn" data-page="check">Hisoblagichni tekshirish</button>
-        </nav>
         
         <div id="about" class="page active">
             <h2>Kompaniya haqida</h2>
-            <p><strong>IDEALMETER</strong> - bu suv hisoblagichlarini ishlab chiqarish va sotishga ixtisoslashgan yetakchi kompaniya. Bizning mahsulotlarimiz yuqori sifat, aniqlik va uzoq muddatli xizmat qilish bilan ajralib turadi.</p>
-            
-            <h3>Bizning afzalliklarimiz</h3>
-            <ul>
-                <li>Yuqori aniqlikdagi o'lchov</li>
-                <li>Ishonchli va bardoshli konstruksiya</li>
-                <li>Uzoq xizmat muddati</li>
-                <li>Zamonaviy dizayn</li>
-                <li>Qulay narxlar</li>
-            </ul>
-            
-            <h3>Bizning maqsadimiz</h3>
-            <p>Har bir uy va korxona uchun ishonchli va aniq suv hisoblagichlarini taqdim etish orqali suv resurslaridan oqilona foydalanishni ta'minlash.</p>
+            <div class="about-content">
+                <p><strong>IDEALMETER</strong> - bu suv hisoblagichlarini ishlab chiqarish va sotishga ixtisoslashgan yetakchi kompaniya. Bizning mahsulotlarimiz yuqori sifat, aniqlik va uzoq muddatli xizmat qilish bilan ajralib turadi.</p>
+                
+                <h3>Bizning afzalliklarimiz</h3>
+                <ul>
+                    <li>Yuqori aniqlikdagi o'lchov</li>
+                    <li>Ishonchli va bardoshli konstruksiya</li>
+                    <li>Uzoq xizmat muddati</li>
+                    <li>Zamonaviy dizayn</li>
+                    <li>Qulay narxlar</li>
+                </ul>
+                
+                <h3>Bizning maqsadimiz</h3>
+                <p>Har bir uy va korxona uchun ishonchli va aniq suv hisoblagichlarini taqdim etish orqali suv resurslaridan oqilona foydalanishni ta'minlash.</p>
+            </div>
             
             <div class="contact-info">
                 <div class="contact-card">
                     <div class="contact-icon">📞</div>
-                    <h3>Telefon</h3>
-                    <p>+998 71 123 45 67</p>
-                    <p>+998 90 123 45 67</p>
+                    <div class="contact-title">Telefon</div>
+                    <p>+998 77 282 00 01</p>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">✉️</div>
-                    <h3>Email</h3>
+                    <div class="contact-title">Email</div>
                     <p>info@idealmeter.uz</p>
-                    <p>sales@idealmeter.uz</p>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">📍</div>
-                    <h3>Manzil</h3>
-                    <p>Toshkent shahar, Mirzo Ulug'bek tumani</p>
+                    <div class="contact-title">Manzil</div>
+                    <p>Toshkent shahar, Uchtepa tumani, O'rikzor savdo kompleksi, 2-qator, 243 do'kon</p>
                 </div>
             </div>
         </div>
@@ -314,44 +358,142 @@
             <h2>Buyurtma berish</h2>
             <p>Quyidagi suv hisoblagichlarimizdan birini tanlang va buyurtma bering:</p>
             
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-img">💧</div>
-                    <div class="product-info">
-                        <div class="product-title">IDEAL-100</div>
-                        <div class="product-desc">Oddiy uy-joylar uchun mo'ljallangan standart suv hisoblagichi</div>
-                        <div class="product-price">150,000 so'm</div>
-                        <button class="btn buy-btn" data-product="IDEAL-100">Buyurtma berish</button>
+            <div class="brand-section">
+                <div class="brand-title">IDEALMETER</div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">IDEALMETER DN-15</div>
+                            <div class="product-desc">Oddiy uy-joylar uchun mo'ljallangan standart suv hisoblagichi</div>
+                            <div class="product-price">150,000 so'm</div>
+                            <button class="btn buy-btn" data-product="IDEALMETER DN-15">Buyurtma berish</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">IDEALMETER DN-20</div>
+                            <div class="product-desc">Yuqori aniqlikdagi, ko'p kvartiralı uylar uchun suv hisoblagichi</div>
+                            <div class="product-price">180,000 so'm</div>
+                            <button class="btn buy-btn" data-product="IDEALMETER DN-20">Buyurtma berish</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">IDEALMETER DN-25</div>
+                            <div class="product-desc">Katta hajmdagi suv sarfi bo'lgan ob'ektlar uchun</div>
+                            <div class="product-price">220,000 so'm</div>
+                            <button class="btn buy-btn" data-product="IDEALMETER DN-25">Buyurtma berish</button>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">💧</div>
-                    <div class="product-info">
-                        <div class="product-title">IDEAL-200</div>
-                        <div class="product-desc">Yuqori aniqlikdagi, ko'p kvartiralı uylar uchun suv hisoblagichi</div>
-                        <div class="product-price">220,000 so'm</div>
-                        <button class="btn buy-btn" data-product="IDEAL-200">Buyurtma berish</button>
+            </div>
+            
+            <div class="brand-section">
+                <div class="brand-title">SFERA</div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">SFERA DN-15</div>
+                            <div class="product-desc">Iqtisodiy va ishonchli suv hisoblagichi</div>
+                            <div class="product-price">120,000 so'm</div>
+                            <button class="btn buy-btn" data-product="SFERA DN-15">Buyurtma berish</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">SFERA DN-20</div>
+                            <div class="product-desc">O'rtacha suv sarfi bo'lgan uylar uchun</div>
+                            <div class="product-price">140,000 so'm</div>
+                            <button class="btn buy-btn" data-product="SFERA DN-20">Buyurtma berish</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">SFERA DN-25</div>
+                            <div class="product-desc">Kvartira va kichik korxonalar uchun</div>
+                            <div class="product-price">160,000 so'm</div>
+                            <button class="btn buy-btn" data-product="SFERA DN-25">Buyurtma berish</button>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">💧</div>
-                    <div class="product-info">
-                        <div class="product-title">IDEAL-300</div>
-                        <div class="product-desc">Sanoat korxonalari uchun kuchli suv hisoblagichi</div>
-                        <div class="product-price">350,000 so'm</div>
-                        <button class="btn buy-btn" data-product="IDEAL-300">Buyurtma berish</button>
+            </div>
+            
+            <div class="brand-section">
+                <div class="brand-title">GIDRO</div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">GIDRO DN-15</div>
+                            <div class="product-desc">Sifat va narxning optimal nisbati</div>
+                            <div class="product-price">135,000 so'm</div>
+                            <button class="btn buy-btn" data-product="GIDRO DN-15">Buyurtma berish</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">GIDRO DN-20</div>
+                            <div class="product-desc">Ishonchli va uzoq muddatli xizmat</div>
+                            <div class="product-price">155,000 so'm</div>
+                            <button class="btn buy-btn" data-product="GIDRO DN-20">Buyurtma berish</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">GIDRO DN-25</div>
+                            <div class="product-desc">Kuchli va bardoshli konstruksiya</div>
+                            <div class="product-price">175,000 so'm</div>
+                            <button class="btn buy-btn" data-product="GIDRO DN-25">Buyurtma berish</button>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">💧</div>
-                    <div class="product-info">
-                        <div class="product-title">IDEAL-SMART</div>
-                        <div class="product-desc">Aqlli suv hisoblagichi, masofadan o'qish imkoniyati bilan</div>
-                        <div class="product-price">450,000 so'm</div>
-                        <button class="btn buy-btn" data-product="IDEAL-SMART">Buyurtma berish</button>
+            </div>
+            
+            <div class="brand-section">
+                <div class="brand-title">ZENPRO</div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">ZENPRO DN-15</div>
+                            <div class="product-desc">Zamonaviy dizayn va yuqori aniqlik</div>
+                            <div class="product-price">145,000 so'm</div>
+                            <button class="btn buy-btn" data-product="ZENPRO DN-15">Buyurtma berish</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">ZENPRO DN-20</div>
+                            <div class="product-desc">Professional va ishonchli</div>
+                            <div class="product-price">165,000 so'm</div>
+                            <button class="btn buy-btn" data-product="ZENPRO DN-20">Buyurtma berish</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-title">ZENPRO DN-25</div>
+                            <div class="product-desc">Sanoat va yirik ob'ektlar uchun</div>
+                            <div class="product-price">185,000 so'm</div>
+                            <button class="btn buy-btn" data-product="ZENPRO DN-25">Buyurtma berish</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -369,7 +511,7 @@
                     </div>
                     <div class="form-group">
                         <label for="customer-phone">Telefon raqamingiz:</label>
-                        <input type="tel" id="customer-phone" required>
+                        <input type="tel" id="customer-phone" value="+998" required>
                     </div>
                     <div class="form-group">
                         <label for="customer-address">Manzilingiz:</label>
@@ -412,38 +554,46 @@
             <div class="contact-card">
                 <h3>Agar hisoblagich soxta bo'lsa</h3>
                 <p>Biz bilan bog'laning va hisoblagichni tekshirish uchun olib keling. Biz sizga yordam beramiz.</p>
-                <p>📞 Qo'ng'iroq qiling: +998 71 123 45 67</p>
+                <p>📞 Qo'ng'iroq qiling: +998 77 282 00 01</p>
             </div>
         </div>
-        
-        <footer>
-            <p>IDEALMETER &copy; 2023. Barcha huquqlar himoyalangan.</p>
-        </footer>
+    </div>
+
+    <!-- Pastki navigatsiya -->
+    <div class="bottom-nav">
+        <button class="nav-btn active" data-page="about">
+            <span class="nav-icon">🏢</span>
+            <span>Kompaniya</span>
+        </button>
+        <button class="nav-btn" data-page="products">
+            <span class="nav-icon">🛒</span>
+            <span>Buyurtma</span>
+        </button>
+        <button class="nav-btn" data-page="check">
+            <span class="nav-icon">🔍</span>
+            <span>Tekshirish</span>
+        </button>
     </div>
 
     <script>
-        // Telegram Web App initialization (agar Telegram ichida ochilsa)
-        if (typeof window.Telegram !== 'undefined') {
-            const tg = window.Telegram.WebApp;
-            tg.expand();
-            tg.enableClosingConfirmation();
-            tg.setHeaderColor('#1e88e5');
-            tg.setBackgroundColor('#f5f5f5');
-        }
-
         // Sahifalar o'rtasida navigatsiya
         document.querySelectorAll('.nav-btn').forEach(button => {
             button.addEventListener('click', function() {
+                // Nav tugmalarini yangilash
                 document.querySelectorAll('.nav-btn').forEach(btn => {
                     btn.classList.remove('active');
                 });
                 this.classList.add('active');
                 
+                // Sahifalarni yangilash
                 const pageId = this.getAttribute('data-page');
                 document.querySelectorAll('.page').forEach(page => {
                     page.classList.remove('active');
                 });
                 document.getElementById(pageId).classList.add('active');
+                
+                // Sahifa yuqorisiga aylantirish
+                window.scrollTo(0, 0);
             });
         });
         
@@ -453,6 +603,8 @@
                 const productName = this.getAttribute('data-product');
                 document.getElementById('product-name').value = productName;
                 document.getElementById('order-form').style.display = 'block';
+                
+                // Formani sahifaning yuqori qismiga aylantirish
                 document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
             });
         });
@@ -467,21 +619,10 @@
             const customerAddress = document.getElementById('customer-address').value;
             const quantity = document.getElementById('order-quantity').value;
             
-            // Buyurtma ma'lumotlarini yig'ish
-            const orderData = {
-                product: productName,
-                name: customerName,
-                phone: customerPhone,
-                address: customerAddress,
-                quantity: quantity,
-                timestamp: new Date().toLocaleString('uz-UZ')
-            };
-            
             // WhatsApp ga yuborish
-            const whatsappMessage = `Yangi buyurtma:%0A%0A🛒 Mahsulot: ${productName}%0A👤 Mijoz: ${customerName}%0A📞 Telefon: ${customerPhone}%0A📍 Manzil: ${customerAddress}%0A🔢 Miqdor: ${quantity}%0A⏰ Vaqt: ${orderData.timestamp}`;
+            const whatsappMessage = `Yangi buyurtma:%0A%0A🛒 Mahsulot: ${productName}%0A👤 Mijoz: ${customerName}%0A📞 Telefon: ${customerPhone}%0A📍 Manzil: ${customerAddress}%0A🔢 Miqdor: ${quantity}%0A⏰ Vaqt: ${new Date().toLocaleString('uz-UZ')}`;
             
-            // WhatsApp link yaratish
-            const whatsappUrl = `https://wa.me/998711234567?text=${whatsappMessage}`;
+            const whatsappUrl = `https://wa.me/998772820001?text=${whatsappMessage}`;
             
             // Yangi oynada ochish
             window.open(whatsappUrl, '_blank');
@@ -500,8 +641,10 @@
             const resultDiv = document.getElementById('check-result');
             
             // Asl seriya raqamlarini aniqlash
-            const validSerials = ['IM2023', 'IM2024', 'IDEAL2023', 'IDEAL2024'];
-            const isOriginal = validSerials.some(valid => serialNumber.toUpperCase().startsWith(valid));
+            const validPrefixes = ['IM', 'SF', 'GD', 'ZP', 'IDEAL', 'SFERA', 'GIDRO', 'ZENPRO'];
+            const isOriginal = validPrefixes.some(prefix => 
+                serialNumber.toUpperCase().startsWith(prefix.toUpperCase())
+            );
             
             if (isOriginal) {
                 resultDiv.className = 'result success';
@@ -509,7 +652,6 @@
                     <h3>✅ Hisoblagich asl!</h3>
                     <p>Seriya raqami: <strong>${serialNumber}</strong></p>
                     <p>Bu hisoblagich IDEALMETER kompaniyasi tomonidan ishlab chiqarilgan asl mahsulotdir.</p>
-                    <p>Ishlab chiqarilgan sana: 2023-yil</p>
                     <p>Kafolat muddati: 5 yil</p>
                 `;
             } else {
@@ -518,7 +660,7 @@
                     <h3>❌ Hisoblagich soxta!</h3>
                     <p>Seriya raqami: <strong>${serialNumber}</strong></p>
                     <p>Bu hisoblagich IDEALMETER kompaniyasi tomonidan ishlab chiqarilmagan.</p>
-                    <p>Iltimos, biz bilan bog'laning: +998 71 123 45 67</p>
+                    <p>Iltimos, biz bilan bog'laning: +998 77 282 00 01</p>
                 `;
             }
             
